@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Registaration|Edit Registration</title>
+    <style>
+        /* Overall form container */
+        .form-container {
+            width: 45%;
+            height: 40vh;
+            margin: auto;
+            padding: 20px;
+            background-color: #6d6ba9;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            display: grid;
+            grid-template-columns: auto auto;
+            grid-template-rows: auto auto auto auto;
+        }
+
+        /* Form header */
+        .form-header {
+            text-align: center;
+            margin-bottom: 20px;
+            color: whitesmoke;
+        }
+
+        /* Form fields */
+        .form-group {
+            margin-bottom: 2%;
+        }
+
+        .form-group label {
+            display: block;
+            margin: auto;
+            font-weight: bold;
+            color: whitesmoke;
+        }
+
+        .form-group input {
+            width: 90%;
+            padding: 2%;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            margin: auto;
+        }
+
+        /* Submit button */
+        .btn-submit {
+            background-color: #007BFF;
+            color: #fff;
+            padding: 5% 10%;
+            border: none;
+            border-radius: 5%;
+            cursor: pointer;
+        }
+
+        .btn-submit:hover {
+            background-color: #0056b3;
+        }
+
+        /* Optional: Add some spacing between elements */
+        .form-group:last-child {
+            margin-bottom: 0;
+        }
+
+        /* Style the list container */
+        ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        /* Style list items */
+        li {
+            margin: 10px 0;
+            padding: 10px;
+            border: 1px solid #ccc;
+            background-color: #6d6ba9;
+            border-radius: 5px;
+            box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+            transition: background-color 0.3s ease, transform 0.3s ease;
+            color: whitesmoke;
+        }
+
+        /* Style list item text */
+        li span {
+            font-size: 16px;
+            color: #333;
+        }
+
+        /* Style list item links */
+        li a {
+            text-decoration: none;
+            color: #007BFF;
+            font-weight: bold;
+        }
+
+        /* Add some spacing between items */
+        li+li {
+            margin-top: 20px;
+        }
+    </style>
+</head>
+
+<body style="background-color: rgb(99, 99, 255);">
+    <div class="form-header">
+        <h1>Edit Information Here</h1>
+    </div>
+    <form action="/edit/<%= regi._id %>" method="POST" style="align-items: center;">
+        <div class="form-container">
+            <div class="form-group">
+                <label>First Name:</label>
+                <input required type="text" name="fnam" placeholder="Enter Your first name" value="<%= regi.fname %>">
+            </div>
+
+            <div class="form-group">
+                <label>Last Name:</label>
+                <input required type="text" name="lnam" placeholder="Enter Your Last name" value="<%= regi.lname %>">
+            </div>
+
+            <div class="form-group">
+                <label>Telephone Number:</label>
+                <input required type="tel" name="tel" placeholder="Enter Your Phone Number" value="<%= regi.tele %>">
+            </div>
+
+            <div class="form-group">
+                <label>Email:</label>
+                <input required type="email" name="mail" placeholder="Enter Your Email Address" value="<%= regi.email %>">
+            </div>
+
+            <div class="form-group">
+                <label>Address:</label>
+                <input required type="text" name="addy" placeholder="Enter Your Address" value="<%= regi.address %>">
+            </div>
+
+            <div class="form-group">
+                <label>City:</label>
+                <input required type="text" name="city" placeholder="Enter Your City Name" value="<%= regi.city %>">
+            </div>
+
+            <div class="form-group">
+                <label>Number:</label>
+                <input required type="number" name="numb" placeholder="Enter Your Favorite number" value="<%= regi.numb %>">
+            </div>
+
+            <button class="btn-submit" type="submit">Update Registration</button>
+
+        </div>
+    </form>
+</body>
+
+</html>
